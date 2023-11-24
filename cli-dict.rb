@@ -11,7 +11,7 @@ if input_word.length > 1
 end 
 
 # i should add some error handling incase 
-db = SQLite3::Database.open 'dictionary.db'
+db = SQLite3::Database.open '.\db\dictionary.db'
 
 w = input_word.first .capitalize
 
@@ -21,7 +21,7 @@ result = (db.execute query, w).first
 db.close
 
 if result.nil?
-  raise "Are you sure you did not misspell?, if not then word is not in database"
+  raise "Are you sure you did not misspell?\nIf not then word is not in database"
 end
 
 puts "\n #{w} \n #{result.first} \n\n"

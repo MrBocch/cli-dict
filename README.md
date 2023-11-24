@@ -1,39 +1,17 @@
 # CLI Dictionary 
 
-Got the dictionary (here)[https://www.bragitoff.com/2016/03/english-dictionary-in-csv-format/]
+A Command Line Interface dictionary with over **55,000 WORDS!** 
 
-(ruby sqlite interface)[https://rubygems.org/gems/sqlite3]
+[//](they are only 54,547 records and some of them are not really words)
 
-should i use a virtual enviorment?
+## Add to PATH
 
-OBJECTIVE
-CLI-APP
-where i could look up a word, and get back its 
-definition, 
+## Showcase
 
-Im planning on storing all the words and definitions 
-using sqlite3
+## Dependencies 
 
-In the csv a new line would look like this 
+Not sure how portable this is,
 
-```"Abhominal","a.","Inhuman."```
-
-I dont like the middle part and i want it gone
-but what if i just dont show it in the database
-
-Thinking i will have only one table, 
-
-words 
-| id | word | definition |
-
-CREATE TABLE words (
-   id INTEGER PRIMARY KEY AUTOINCREMENT,
-   word TEXT,
-   def TEXT
-);
-
-i want to make script that adds every line from csv
-into this database
-
-CREATE INDEX idx_word ON words(word);
-creating a index made so much more quicker? how do i test that? 
+> ruby 3.2
+> sqlite3 
+> sqlite3 ruby gem 
