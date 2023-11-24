@@ -8,9 +8,7 @@ An offline command line interface dictionary with over **55,000 WORDS!**
 
 ## Showcase
 
-<video width="500" autoplay>
-    <source src="showcase.mp4" type="video/mp4"><source>
-</video>
+[showcase](showcase.mp4)
 
 ## Dependencies 
 
