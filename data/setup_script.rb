@@ -1,6 +1,8 @@
 require 'csv'
 require 'sqlite3'
 
+# i should test, which is faster
+
 db = SQLite3::Database.open "testdic.db"
 
 db.execute "BEGIN TRANSACTION;"
