@@ -8,7 +8,7 @@ An offline command line interface dictionary with over **55,000 WORDS!**
 
 ## Showcase
 
-[showcase](showcase.mp4)
+[![Video Placeholder](https://www.youtube.com/watch?v=85MbFVqPd2A)](https://www.youtube.com/watch?v=85MbFVqPd2A)
 
 ## Dependencies 
 
