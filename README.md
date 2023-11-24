@@ -7,8 +7,9 @@ An offline command line interface dictionary with over **55,000 WORDS!**
 ``` cli-dict <word> ```
 
 ## Showcase
-
-[![Video Placeholder](https://www.youtube.com/watch?v=85MbFVqPd2A)](https://www.youtube.com/watch?v=85MbFVqPd2A)
+ <iframe width="420" height="315"
+src="https://www.youtube.com/watch?v=85MbFVqPd2A">
+</iframe> 
 
 ## Dependencies 
 
