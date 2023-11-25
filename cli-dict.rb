@@ -10,8 +10,11 @@ if input_word.length > 1
   raise "No more than 1 words"
 end 
 
+current_dir = __dir__
+db_file = File.join(current_dir, 'dictionary.db')
+
 # i should add some error handling incase 
-db = SQLite3::Database.open 'dictionary.db'
+db = SQLite3::Database.open db_file
 
 w = input_word.first .capitalize
 
