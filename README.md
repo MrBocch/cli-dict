@@ -1,6 +1,6 @@
 # CLI Dictionary 
 
-An offline command line interface dictionary with over **55,000 WORDS!** 
+An offline command line interface dictionary with over **176,000 WORDS!** 
 
 ## Usage
 
