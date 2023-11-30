@@ -1,6 +1,11 @@
 require 'csv'
 require 'sqlite3'
 
+# there is actually a better way of doing this
+# open sqlite3
+# .mode csv
+# .import dictionary.csv <table>
+
 # i should test, which is faster
 
 db = SQLite3::Database.open "testdic.db"
