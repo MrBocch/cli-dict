@@ -1,38 +1,20 @@
 # NOTES 
 
-Got the dictionary (here)[https://www.bragitoff.com/2016/03/english-dictionary-in-csv-format/]
+Got the dictionary [here](https://www.bragitoff.com/2016/03/english-dictionary-in-csv-format/)
 
-(ruby sqlite interface)[https://rubygems.org/gems/sqlite3]
+I found a even more intensive dictionary 
+[here](https://github.com/benjihillard/English-Dictionary-Database)
+
+why are their words missing from the db when i import csv into table?
+
+they are 188536 lines in csv but only 177ish in db? (word wrapping?), how do i find the difference?
+
+[ruby sqlite interface](https://rubygems.org/gems/sqlite3)
+
+.mode box is so cool, how do i make some thing similar?
 
 should i use a virtual enviorment? 
 
-CLI-APP
-where i could look up a word, and get back its 
-definition, 
-
-Im planning on storing all the words and definitions 
-using sqlite3
-
-In the csv a new line would look like this 
-
-```"Abhominal","a.","Inhuman."```
-
-I dont like the middle part and i want it gone
-but what if i just dont show it in the database
-
-Thinking i will have only one table, 
-
-words 
-| id | word | definition |
-
-CREATE TABLE words (
-   id INTEGER PRIMARY KEY AUTOINCREMENT,
-   word TEXT,
-   def TEXT
-);
-
-i want to make script that adds every line from csv
-into this database
 
 CREATE INDEX idx_word ON words(word);
 creating a index made so much more quicker? how do i test that? 
