@@ -11,8 +11,7 @@ An offline command line interface dictionary with over **176,000 WORDS!**
 Not sure how portable this is,
 
 * ruby 3.2
-* sqlite3 
-* sqlite3 ruby gem 
+* ruby gem sqlite3
 
 Dont forget to add it to your PATH
 
