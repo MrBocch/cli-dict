@@ -26,9 +26,9 @@ result = (db.execute query, w).flatten
 # They are multiple definitions on certain words, ill just show up the first one 
 db.close
 
-if result.nil?
+if result.nil? or result.empty?
   puts "\nAre you sure you did not misspell \"#{input_word.first}\"\n"
-  puts "If not then word is not in database"
+  puts "If not then \"#{input_word.first}\" is not in database"
   return
 end
 
