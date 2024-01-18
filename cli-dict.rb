@@ -22,7 +22,7 @@ db = SQLite3::Database.open db_file
 w = input_word.first .capitalize
 
 query = 'SELECT def FROM words WHERE word = ?'
-result = (db.execute query, w).first
+result = (db.execute query, w).flatten
 # They are multiple definitions on certain words, ill just show up the first one 
 db.close
 
@@ -32,4 +32,8 @@ if result.nil?
   return
 end
 
-puts "\n #{w} \n #{result.first} \n\n"
+puts "\n #{w}" 
+
+result.each { |e|
+  puts "\n- #{e}\n"  
+}
