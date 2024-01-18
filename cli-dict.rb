@@ -3,11 +3,14 @@ require 'sqlite3'
 input_word = ARGV 
 
 if input_word.length == 0
-  raise "What do i look up?"
+  puts "\nHow to use me"
+  puts "cli-dict <word>"
+  return
 end
 
 if input_word.length > 1 
-  raise "No more than 1 words"
+  puts "\nOne word at a time please"
+  return
 end 
 
 current_dir = __dir__
@@ -24,7 +27,9 @@ result = (db.execute query, w).first
 db.close
 
 if result.nil?
-  raise "Are you sure you did not misspell?\nIf not then word is not in database"
+  puts "\nAre you sure you did not misspell \"#{input_word.first}\"\n"
+  puts "If not then word is not in database"
+  return
 end
 
 puts "\n #{w} \n #{result.first} \n\n"
