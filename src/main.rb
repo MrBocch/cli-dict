@@ -11,13 +11,11 @@ if ARGV.length > 1
   return
 end 
 
-current_dir = __dir__
-db_file = File.join(current_dir, 'dictionary.db')
-
-# i should add some error handling incase 
-db = SQLite3::Database.open db_file
-
 w = ARGV.first.capitalize
+
+db_file = File.join(__dir__, 'dictionary.db')
+
+db = SQLite3::Database.open db_file
 
 query = 'SELECT def FROM words WHERE word = ?'
 result = (db.execute query, w).flatten
