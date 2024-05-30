@@ -1,14 +1,12 @@
 require 'sqlite3'
 
-input_word = ARGV 
-
-if input_word.length == 0
+if ARGV.length == 0
   puts "\nHow to use me"
   puts "cli-dict <word>"
   return
 end
 
-if input_word.length > 1 
+if ARGV.length > 1 
   puts "\nOne word at a time please"
   return
 end 
@@ -19,21 +17,21 @@ db_file = File.join(current_dir, 'dictionary.db')
 # i should add some error handling incase 
 db = SQLite3::Database.open db_file
 
-w = input_word.first .capitalize
+w = ARGV.first.capitalize
 
 query = 'SELECT def FROM words WHERE word = ?'
 result = (db.execute query, w).flatten
-# They are multiple definitions on certain words, ill just show up the first one 
+
 db.close
 
 if result.nil? or result.empty?
-  puts "\nAre you sure you did not misspell \"#{input_word.first}\"\n"
-  puts "If not then \"#{input_word.first}\" is not in database"
+  puts "\nAre you sure you did not misspell \"#{w}\"\n"
+  puts "If not then \"#{w}\" is not in database"
   return
 end
 
 puts "\n #{w}" 
 
-result.each { |e|
-  puts "\n- #{e}\n"  
-}
+result.each do |d|
+  puts "\n- #{d}\n"  
+end
