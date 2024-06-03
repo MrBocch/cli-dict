@@ -11,16 +11,21 @@ if ARGV.length > 1
   return
 end 
 
+def search word
+  db_file = File.join(__dir__, 'dictionary.db')
+  db = SQLite3::Database.open db_file
+  query = 'SELECT def FROM words WHERE word = ?'
+
+  result = (db.execute query, word).flatten
+
+  db.close
+
+  return result
+end
+
+
 w = ARGV.first.capitalize
-
-db_file = File.join(__dir__, 'dictionary.db')
-
-db = SQLite3::Database.open db_file
-
-query = 'SELECT def FROM words WHERE word = ?'
-result = (db.execute query, w).flatten
-
-db.close
+result = search w
 
 if result.nil? or result.empty?
   puts "\nAre you sure you did not misspell \"#{w}\"\n"
