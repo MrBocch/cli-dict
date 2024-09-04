@@ -1,5 +1,11 @@
 require 'sqlite3'
 
+# cant believe i completetly forgot about piping in a word lol
+if !STDIN.tty?
+  word = STDIN.read.strip
+  ARGV.push word
+end
+
 if ARGV.length == 0
   puts "\nHow to use me"
   puts "cli-dict <word>"
